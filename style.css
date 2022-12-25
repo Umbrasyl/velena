@@ -16,23 +16,26 @@ a:hover {
 
 /* BODY START*/
 
-body {
-  padding: 0 7vw;
-}
-
 /* Have space outside container elements */
 .container {
-  padding: 5vh 0;
+  padding-top: 5vh;
+  padding-bottom:5vh;
 }
 
-/* HEADER START */
+/* NAV START */
 
 nav {
+  width: 100vw;
+  position: absolute;
+  top:0;
+  left:0;
+  padding: 0 3vw;
   display: flex;
   justify-content: space-between;
+  z-index: 999;
 }
 
-.nav-item {
+.nav-item{
   background-color: #ccc;
   padding: 10px;
   display: flex;
@@ -47,10 +50,6 @@ nav {
 
 /* Navigation Middle */
 
-.nav-item:nth-child(2) {
-  margin-top: 1vh;
-}
-
 /* Navigation Right */
 .lets-talk {
   border-radius: 4px;
@@ -63,3 +62,17 @@ nav {
 .nav-item:nth-child(3) a{
   margin-right: 2.88462vw;
 }
+
+/* NAV END */
+
+/* HEADER START */
+
+header{
+  height: 80vh;
+  font-size: 6.59vw;
+  line-height: 96%;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+}
+
