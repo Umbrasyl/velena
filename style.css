@@ -1,3 +1,5 @@
+/* CSS RESET */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,4 +12,54 @@ a {
 
 a:hover {
   color: inherit;
+}
+
+/* BODY START*/
+
+body {
+  padding: 0 7vw;
+}
+
+/* Have space outside container elements */
+.container {
+  padding: 5vh 0;
+}
+
+/* HEADER START */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item a {
+  color: #000;
+  text-decoration: none;
+}
+/* Navigation First */
+
+/* Navigation Middle */
+
+.nav-item:nth-child(2) {
+  margin-top: 1vh;
+}
+
+/* Navigation Right */
+.lets-talk {
+  border-radius: 4px;
+}
+
+.menu-button {
+  margin-left: auto;
+}
+
+.nav-item:nth-child(3) a{
+  margin-right: 2.88462vw;
 }
