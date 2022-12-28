@@ -18,15 +18,20 @@ a:hover {
 
 /* Have space outside container elements */
 .container {
-  padding-top: 5vh;
-  padding-bottom:5vh;
+  padding-top: 1.75vh;
+  padding-bottom:1.75vh;
+  
+}
+
+.wrapper {
+  padding: 1.75vh 3vw;
 }
 
 /* NAV START */
 
 nav {
   width: 100vw;
-  position: absolute;
+  position: fixed;
   top:0;
   left:0;
   padding: 0 3vw;
@@ -62,40 +67,6 @@ nav {
 .nav-item:nth-child(3) a{
   margin-right: 2.88462vw;
 }
-/*--- Menu ---*/
-
-.menu {
-  transition: all 1.5s ease-in;
-  opacity: 0;
-}
-
-.visible {
-  opacity: 1;
-}
-
-#upper,
-#lower {
-  transition: all 0.2s ease;
-}
-
-.menu-button:hover #upper {
-  transform-origin: center;
-  transform: rotate(45deg) translateY(20%);
-}
-
-.menu-button:hover #lower {
-  transform-origin: center;
-  transform: rotate(-45deg) translateY(-20%);
-}
-
-svg {
-  background-color: white;
-}
-
-svg {
-  width: 3vw;
-  height: auto;
-}
 
 /* NAV END */
 
@@ -108,5 +79,81 @@ header{
   text-align: center;
   text-transform: uppercase;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* HEADER END */
+
+/* HOME INTRO MEDIA */
+
+.home-intro-media{
+  height: 100vh;
+  width: 94vw;
+  margin: 0 3vw;
+  background-color: #000;
+}
+
+/*
+.home-intro-video{
+
+}
+*/
+
+/* HOME SHOWREEL */
+
+.home-showreel{
+  height: 75vh;
+  background-color: gray;
+  font-size: 2.2vw;
+  line-height: 120%;
+  font-weight: 300;
+}
+
+.home-showreel-content{
+  width: 65vw;
+}
+
+/* HOME SERVICES */
+
+.home-services{
+  height: 120vh;
+
+}
+
+.home-services-body{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.home-services-header{
+  grid-column: 1;
+}
+
+.home-services-content{
+  grid-column: 2;
+  grid-template-rows: repeat(4 ,1fr);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  border-top: 5px solid red;
+  border-bottom: 5px solid red;
+}
+
+.home-service-title {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 1.83vw;
+}
+
+.home-service-description {
+  grid-column: 1;
+  width: 42%;
+  font-size: .915vw;
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 150%;
+}
