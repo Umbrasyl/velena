@@ -25,6 +25,7 @@ a:hover {
 
 .wrapper {
   padding: 1.75vh 3vw;
+  max-height: 100%;
 }
 
 /* NAV START */
@@ -117,8 +118,7 @@ header{
 /* HOME SERVICES */
 
 .home-services{
-  height: 120vh;
-
+  height: 200vh;
 }
 
 .home-services-body{
@@ -128,6 +128,7 @@ header{
 
 .home-services-header{
   grid-column: 1;
+  font-size: 3rem;
 }
 
 .home-services-content{
@@ -136,6 +137,7 @@ header{
 }
 
 .services {
+  padding: 5vh 5vw 0 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows:repeat(4, 1fr);
@@ -145,8 +147,30 @@ header{
 
 .home-service-title {
   grid-column: 1;
+  font-size: 2rem;
 }
 
 .home-service-description {
   grid-column: 1;
+  font-size: 1rem;
 }
+
+/* CLIENTS */
+
+.clients{
+  height: 100vh;
+}
+
+.client-body{
+  display: grid;
+  grid-template-rows:repeat(4, 1fr);
+  height: 100vh;
+}
+
+.client-list{
+  height: 10vh;
+  display: flex;
+  font-size: 7rem;
+  justify-content: space-between;
+}
+
