@@ -89,7 +89,7 @@ header{
   align-items: center;
   transition: height 1s;
 }
-
+/* HEADER TEXT ANIMATION*/
 .fade-in-text {
   /* Hide the element by default */
   opacity: 1;
@@ -202,10 +202,36 @@ header{
   flex-wrap: wrap;
 }
 
+.push-away {
+  /* Set the initial position of the element to its default value */
+  transform: translateX(0);
+  /* Animate the element over a duration of 1 second */
+  animation: push-away 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes push-away {
+  0% {
+    /* At the start of the animation, set the element's position to its default value */
+    transform: translateX(0);
+  }
+  50% {
+    /* At the midpoint of the animation, set the element's position to the left or right of the screen */
+    transform: translateX(50%);
+  }
+  100% {
+    /* At the end of the animation, set the element's position to the left or right of the screen */
+    transform: translateX(100%);
+  }
+}
 /* SLIDER */
 
+.slider-body{
+  
+}
+
 .slider-horizontal-line-top{
-  height: 1px; width: 100%; background-color: #4642426e;
+  height: 2px; width: 100%; background-color: #4642426e;
 }
 
 #line-container {
@@ -224,6 +250,8 @@ header{
   to {
     width: 100%;
   }
+
+  
 }/*animate the width of the line as you scroll*/
 
 /* OFFER */
@@ -248,7 +276,7 @@ header{
 }
 
 .offer-title:hover .talk-arrow {
-  transform: translateX(0); /* When the mouse hovers over the .offer-title element, move the .talk-arrow element back onto the screen */
+  transform: translateX(-80%); /* When the mouse hovers over the .offer-title element, move the .talk-arrow element back onto the screen */
 }
 /* FOOTER */
 

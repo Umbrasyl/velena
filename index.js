@@ -1,4 +1,7 @@
 "use strict";
+
+/* HEADER TEXT */
+
 window.onload = function() {
   // Set the timeout to 1 second (1000 milliseconds)
   setTimeout(function() {
@@ -7,40 +10,59 @@ window.onload = function() {
     // Set the height of the header to 80vh
     header.style.height = "80vh";
   }, 1000);
-}
+};
+/* CLIENTS MOVE TO RIGHT */
+var divs = document.querySelectorAll(".push-away");
 
-
-const clientList = document.querySelector('.client-list');
-
-function checkVisibility() {
-  const clientListTop = clientList.offsetTop;
-  const clientListBottom = clientListTop + clientList.offsetHeight;
-
-  const windowTop = window.scrollY;
-  const windowBottom = windowTop + window.innerHeight;
-
-  if (clientListBottom > windowTop && clientListTop < windowBottom) {
-    clientList.style.marginLeft = 'auto';
-  } else {
-    clientList.style.marginLeft = '0';
-  }
-}
-
-window.addEventListener('scroll', checkVisibility);
-window.addEventListener('resize', checkVisibility);
-
-
-
-const lineContainer = document.getElementById("line-container");
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
+// Create an intersection observer to detect when the elements enter the viewport
+var observerPush = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    // If the element is in the viewport
     if (entry.intersectionRatio > 0) {
-      lineContainer.classList.add("visible");
-      observer.unobserve(lineContainer);
+      // Animate the element
+      entry.target.style.animation = "push-away 1s";
+      // Stop observing the element
+      observerPush.unobserve(entry.target);
     }
   });
 });
 
-observer.observe(lineContainer);
+// Start observing the elements
+divs.forEach(function(div) {
+  observerPush.observe(div);
+});
+
+/* LINE IN SHOWREEL */ 
+
+const lineContainer = document.getElementById("line-container");
+
+const observerLine = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      lineContainer.classList.add("visible");
+      observerLine.unobserve(lineContainer);
+    }
+  });
+});
+
+observerLine.observe(lineContainer);
 /*Add visible class to the line-container element when it is scrolled into view.*/
+
+let count = 1;
+const total = 5;
+
+function incrementCount() {
+  count++;
+  if (count > total) {
+    count = total;
+  }
+  document.getElementById('counter').innerHTML = `${count}/${total}`;
+}
+
+function decrementCount() {
+  count--;
+  if (count < 1) {
+    count = 1;
+  }
+  document.getElementById('counter').innerHTML = `${count}/${total}`;
+}
