@@ -36,7 +36,6 @@ a:active {
   padding: 1.75vh 3vw;
   max-height: 100%;
 }
-
 /* NAV START */
 
 nav {
@@ -77,13 +76,10 @@ nav {
 .nav-item:nth-child(3) a{
   margin-right: 2.88462vw;
 }
-
-/* NAV END */
-
 /* HEADER START */
 
 header{
-  height: 80vh;
+  height: 100vh;
   font-size: 6.59vw;
   line-height: 96%;
   text-align: center;
@@ -91,10 +87,33 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: height 1s;
 }
 
-/* HEADER END */
+.fade-in-text {
+  /* Hide the element by default */
+  opacity: 1;
+  /* Set the starting position at the bottom of the screen */
+  transform: translateY(100%);
+   /* Animate the element over a duration of 1 second */
+   animation: fade-in-text 1s;
+  /* Run the animation only once */
+  animation-iteration-count: 1;
+  /* Keep the element in its final state after the animation is finished */
+  animation-fill-mode: forwards;
+}
 
+@keyframes fade-in-text {
+  0% {
+    /* At the start of the animation, set the element's opacity to 0 */
+    opacity: 0;
+  }
+  100% {
+    /* At the end of the animation, set the element's opacity to 1 and its position to its default value */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* HOME INTRO MEDIA */
 
 .home-intro-media{
@@ -109,7 +128,6 @@ header{
 
 }
 */
-
 /* HOME SHOWREEL */
 
 .home-showreel{
@@ -163,7 +181,6 @@ header{
   grid-column: 1;
   font-size: 1rem;
 }
-
 /* CLIENTS */
 
 .clients{
@@ -174,15 +191,40 @@ header{
   display: grid;
   grid-template-rows:repeat(4, 1fr);
   height: 100vh;
+
 }
 
 .client-list{
   height: 10vh;
   display: flex;
   font-size: 7rem;
-  justify-content: space-between;
+  transition: all 2s;
+  flex-wrap: wrap;
 }
 
+/* SLIDER */
+
+.slider-horizontal-line-top{
+  height: 1px; width: 100%; background-color: #4642426e;
+}
+
+#line-container {
+  visibility: hidden;
+}
+
+#line-container.visible {
+  visibility: visible;
+  animation: drawLine 1s linear;
+}
+
+@keyframes drawLine {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}/*animate the width of the line as you scroll*/
 
 /* OFFER */
 
@@ -208,7 +250,6 @@ header{
 .offer-title:hover .talk-arrow {
   transform: translateX(0); /* When the mouse hovers over the .offer-title element, move the .talk-arrow element back onto the screen */
 }
-
 /* FOOTER */
 
 footer .wrapper{
